@@ -15,7 +15,7 @@ Do NOT shoot at your monitor!
 To add a new game do the following:
 
 * Add game to src/app.js (see existing games)
-* Create 'src/components_<gameid>' and 'src/scenes_<gameid>' (see existing files for examples). 'src/scenes_<gameid>' must at least contain two scenes: 'Load_<gameid>' and 'Game_<gameid>'
+* Create 'src/components_&lt;gameid&gt;' and 'src/scenes_&lt;gameid&gt;' (see existing files for examples). 'src/scenes_&lt;gameid&gt;' must at least contain two scenes: 'Load_&lt;gameid&gt;' and 'Game_&lt;gameid&gt;'
 * Add new js files to index.html
 
 # Thanks / Attributions
