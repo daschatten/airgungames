@@ -1,0 +1,13 @@
+body { 
+    background: black; 
+    margin: 0px;
+    font-family: helvetica;
+}
+
+.menuitem{
+    text-align: center;
+    color: white;
+    font-size: 2em;
+
+    padding-top: 50px;
+}
