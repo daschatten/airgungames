@@ -162,6 +162,5 @@ Crafty.c("TP1_Timer", {
     updateRemaining: function(value) {
         this._remaining = value;
         this.text(this._remaining);
-        console.log(this._remaining);
     },
 });
