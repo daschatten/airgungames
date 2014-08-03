@@ -2,7 +2,7 @@ Crafty.scene('LoadMenu', function(){
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 100, w: Crafty.DOM.window.width })
     .text('Loading airgungames')
-    .textFont({ size: '80px', weight: 'bold' })
+    .textFont({ size: '60px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     Crafty.load([
@@ -41,7 +41,7 @@ Crafty.scene('Menu', function(){
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 50, w: Crafty.DOM.window.width })
     .text("Airgun Games")
-    .textFont({ size: '80px', weight: 'bold' })
+    .textFont({ size: '60px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     var line_height = Crafty.DOM.window.height - _grid.page.headerspace - _grid.page.footerspace;
@@ -81,7 +81,7 @@ Crafty.scene('GameMenu', function(){
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 50, w: Crafty.DOM.window.width })
     .text(App._game.name)
-    .textFont({ size: '80px', weight: 'bold' })
+    .textFont({ size: '60px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     // Player count setting
@@ -115,13 +115,13 @@ Crafty.scene('GameMenu', function(){
 
     Crafty.e("MenuText")
     .text("Game mode")
-    .attr({x: Crafty.DOM.window.width/2 - 500, y: 320, w: 500, h: 80});
+    .attr({x: Crafty.DOM.window.width/2 - 500, y: 280, w: 500, h: 80});
 
     gameMode = Crafty.e("GameMode")
-    .attr({x: Crafty.DOM.window.width/2 + 100, y: 320, w: 500, h: 80});
+    .attr({x: Crafty.DOM.window.width/2 + 100, y: 280, w: 500, h: 80});
 
     prevGamemode = Crafty.e("2D, DOM, Color, Mouse, spr_arrow_left")
-    .attr({x: Crafty.DOM.window.width/2, y: 320 + 49 / 2})
+    .attr({x: Crafty.DOM.window.width/2, y: 280 + 49 / 2})
     .color('rgba(0,0,0,0)');
 
     prevGamemode.bind('Click', function(){
@@ -130,7 +130,7 @@ Crafty.scene('GameMenu', function(){
     });
 
     nextGamemode = Crafty.e("2D, DOM, Color, Mouse, spr_arrow_right")
-    .attr({x: Crafty.DOM.window.width/2 + 50, y: 320 + 49 / 2})
+    .attr({x: Crafty.DOM.window.width/2 + 50, y: 280 + 49 / 2})
     .color('rgba(0,0,0,0)');
 
     nextGamemode.bind('Click', function(){
@@ -143,13 +143,13 @@ Crafty.scene('GameMenu', function(){
 
     Crafty.e("MenuText")
     .text("Difficulty")
-    .attr({x: Crafty.DOM.window.width/2 - 500, y: 440, w: 500, h: 80});
+    .attr({x: Crafty.DOM.window.width/2 - 500, y: 360, w: 500, h: 80});
 
     difficulty = Crafty.e("Difficulty")
-    .attr({x: Crafty.DOM.window.width/2 + 100, y: 440, w: 500, h: 80});
+    .attr({x: Crafty.DOM.window.width/2 + 100, y: 360, w: 500, h: 80});
 
     prevDifficuly = Crafty.e("2D, DOM, Color, Mouse, spr_arrow_left")
-    .attr({x: Crafty.DOM.window.width/2, y: 440 + 49 / 2})
+    .attr({x: Crafty.DOM.window.width/2, y: 360 + 49 / 2})
     .color('rgba(0,0,0,0)');
 
     prevDifficuly.bind('Click', function(){
@@ -158,7 +158,7 @@ Crafty.scene('GameMenu', function(){
     });
 
     nextDifficulty = Crafty.e("2D, DOM, Color, Mouse, spr_arrow_right")
-    .attr({x: Crafty.DOM.window.width/2 + 50, y: 440 + 49 / 2})
+    .attr({x: Crafty.DOM.window.width/2 + 50, y: 360 + 49 / 2})
     .color('rgba(0,0,0,0)');
 
     nextDifficulty.bind('Click', function(){
@@ -169,15 +169,15 @@ Crafty.scene('GameMenu', function(){
     // Start game
 
     button = Crafty.e("HTML, DOM, Button")
-    .append('<div class="menuitem">Start Game</div>')
-    .attr({x: Crafty.DOM.window.width/2 - 500, y: 680, w: 1000, h: 100});
+    .append('<div class="menubutton">Start Game</div>')
+    .attr({x: Crafty.DOM.window.width/2 - 100, y: 440, w: 200, h: 50});
     button.setTargetscene('Game_' + App._game.id);
 
     // Return
 
     button = Crafty.e("HTML, DOM, Button")
-    .append('<div class="menuitem">Return</div>')
-    .attr({x: Crafty.DOM.window.width/2 - 500, y: 800, w: 1000, h: 100});
+    .append('<div class="menubutton">Return</div>')
+    .attr({x: Crafty.DOM.window.width/2 - 100, y: 520, w: 200, h: 50});
     button.setTargetscene('Menu');
 });
 
@@ -185,13 +185,13 @@ Crafty.scene('Lost', function(){
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 100, w: Crafty.DOM.window.width })
     .text(App._game.name)
-    .textFont({ size: '80px', weight: 'bold' })
+    .textFont({ size: '60px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 200, w: Crafty.DOM.window.width })
     .text("You lost!")
-    .textFont({ size: '60px', weight: 'bold' })
+    .textFont({ size: '40px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     button = Crafty.e("HTML, DOM, Button")
@@ -214,19 +214,19 @@ Crafty.scene('Win', function(){
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 100, w: Crafty.DOM.window.width })
     .text(App._game.name)
-    .textFont({ size: '80px', weight: 'bold' })
+    .textFont({ size: '60px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 200, w: Crafty.DOM.window.width })
     .text("Victory!")
-    .textFont({ size: '60px', weight: 'bold' })
+    .textFont({ size: '40px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 300, w: Crafty.DOM.window.width })
     .text('Time: ' + seconds + 's')
-    .textFont({ size: '60px', weight: 'bold' })
+    .textFont({ size: '40px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     button = Crafty.e("HTML, DOM, Button")

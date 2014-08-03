@@ -11,3 +11,11 @@ body {
 
     padding-top: 50px;
 }
+
+.menubutton{
+    text-align: center;
+    color: white;
+    font-size: 2em;
+
+    padding-top: 25px;
+}

@@ -101,7 +101,7 @@ Crafty.c('CenterText', {
             w: Crafty.DOM.window.width,
         });
         this.text('Press a key to continue...');
-        this.textFont({ size: '60px', weight: 'bold' })
+        this.textFont({ size: '40px', weight: 'bold' })
         this.css({ 'color': 'black', 'text-align': 'center' });
     },
 
@@ -423,7 +423,7 @@ Crafty.c("Circle", {
 Crafty.c('MenuText', {
     init: function(){
         this.requires("2D, DOM, Text");
-        this.textFont({ size: '60px', weight: 'bold' });
+        this.textFont({ size: '40px', weight: 'bold' });
         this.css('text-align', 'left');
     },
 });
@@ -432,7 +432,7 @@ Crafty.c('PlayerCount', {
     init: function(){
         this.requires("2D, DOM, Text")
         this.update();
-        this.textFont({ size: '60px', weight: 'bold' });
+        this.textFont({ size: '40px', weight: 'bold' });
         this.css('text-align', 'center');
     },
 
@@ -446,7 +446,7 @@ Crafty.c('GameMode', {
     init: function(){
         this.requires("2D, DOM, Text")
         this.update();
-        this.textFont({ size: '60px', weight: 'bold' });
+        this.textFont({ size: '40px', weight: 'bold' });
         this.css('text-align', 'center');
     },
 
@@ -460,7 +460,7 @@ Crafty.c('Difficulty', {
     init: function(){
         this.requires("2D, DOM, Text")
         this.update();
-        this.textFont({ size: '60px', weight: 'bold' });
+        this.textFont({ size: '40px', weight: 'bold' });
         this.css('text-align', 'center');
     },
 

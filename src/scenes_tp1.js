@@ -2,7 +2,7 @@ Crafty.scene('Load_tp1', function(){
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 100, w: Crafty.DOM.window.width })
     .text('Loading ' + App._game.name)
-    .textFont({ size: '80px', weight: 'bold' })
+    .textFont({ size: '60px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     Crafty.load([
@@ -27,7 +27,7 @@ Crafty.scene('Game_tp1', function(){
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 10, w: Crafty.DOM.window.width })
     .text(App._game.name)
-    .textFont({ size: '80px', weight: 'bold' })
+    .textFont({ size: '60px', weight: 'bold' })
     .css({ 'color': 'black', 'text-align': 'center' });
 
     Crafty.e('HitDisplay')
@@ -36,7 +36,7 @@ Crafty.scene('Game_tp1', function(){
     Crafty.e("2D, Canvas, Mouse, Text")
     .attr({ x: Crafty.DOM.window.width - 100, y: 10 })
     .text('Exit')
-    .textFont({ size: '40px', weight: 'bold' })
+    .textFont({ size: '20px', weight: 'bold' })
     .bind('Click', function(){
         Crafty.scene('GameMenu');
     });
