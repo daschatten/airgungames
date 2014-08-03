@@ -76,6 +76,7 @@ Crafty.scene('GameMenu', function(){
     // init player count for choosen game
     App.initPlayers();
     App.initGamemode();
+    App.initDifficulty();
 
     Crafty.e("2D, DOM, Text")
     .attr({ x: 0, y: 50, w: Crafty.DOM.window.width })
