@@ -41,7 +41,11 @@ Crafty.scene('Game_tp1', function(){
         Crafty.scene('GameMenu');
     });
 
-    Crafty.e("TargetManager").start();
+    timer = Crafty.e("TP1_Timer")
+    .textFont({ size: '40px', weight: 'bold' })
+    .attr({ x: 10, y: 10 });
+
+    Crafty.e("TargetManager").start(timer);
 });
 
 

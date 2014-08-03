@@ -42,10 +42,13 @@ Crafty.c('TargetManager', {
             _hitCounterGreen: null,
             _hitCounterRed: null,
             _hitCounterYellow: null,
+            _timer: null,
+            _remaining: 0,
         });
     },
 
-    start: function() {
+    start: function(timer) {
+        this._timer = timer;
         this.initTargets();
         this.setTargets();
     },
@@ -89,21 +92,29 @@ Crafty.c('TargetManager', {
     },
 
     setTargets: function() {
-        this.calculatePosition();
 
-        this._targetBlue.attr({x: (0 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff });
-        this._hitCounterBlue.attr({x: (0 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
+        this._remaining--;
 
-        this._targetGreen.attr({x: (1 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff });
-        this._hitCounterGreen.attr({x: (1 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
+        if(this._remaining <= 0){
+            this.calculatePosition();
 
-        this._targetRed.attr({x: (2 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff });
-        this._hitCounterRed.attr({x: (2 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
+            this._targetBlue.attr({x: (0 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff });
+            this._hitCounterBlue.attr({x: (0 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
 
-        this._targetYellow.attr({x: (3 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2 ) + this._ydiff });
-        this._hitCounterYellow.attr({x: (3 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
+            this._targetGreen.attr({x: (1 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff });
+            this._hitCounterGreen.attr({x: (1 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
 
-        this.timeout(this.setTargets, this.getTimerValue());
+            this._targetRed.attr({x: (2 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff });
+            this._hitCounterRed.attr({x: (2 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
+
+            this._targetYellow.attr({x: (3 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2 ) + this._ydiff });
+            this._hitCounterYellow.attr({x: (3 * space + space / 2 - 91 / 2) + this._xdiff, y: (Crafty.DOM.window.height / 2 - 91 / 2) + this._ydiff + 100, w: 91});
+
+            this._remaining = this.getTimerValue() / 1000;
+        }
+
+        this._timer.updateRemaining(this._remaining);
+        this.timeout(this.setTargets, 1000);
     },
 
     calculatePosition: function() {
@@ -139,5 +150,18 @@ Crafty.c('TargetManager', {
             default:
                 return 3000;
         }
-    }
+    },
+});
+
+Crafty.c("TP1_Timer", {
+    init: function() {
+        this.requires("2D, Canvas, Text");
+        this.attr({ _remaining: 0 });
+    },
+
+    updateRemaining: function(value) {
+        this._remaining = value;
+        this.text(this._remaining);
+        console.log(this._remaining);
+    },
 });
