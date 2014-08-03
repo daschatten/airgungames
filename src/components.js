@@ -180,17 +180,15 @@ Crafty.c('MoveWithStaticVector', {
             _diffx: 0,
             _diffy: 0,
             _speed: 1,
-            _enableRotation: false,
+            _drunken: false,
         });
         this.origin('center');
     },
 
     // Enable rotation
-    enableRotation: function(bool)
+    setDrunken: function(bool)
     {
-        // this._enableRotation = bool;
-        // strange effects right now!
-        this._enableRotation = false;
+        this._drunken = bool;
     },
 
     // Set speed
@@ -209,7 +207,7 @@ Crafty.c('MoveWithStaticVector', {
         this.x += this._diffx * this._speed;
         this.y += this._diffy * this._speed;
 
-        if(this._enableRotation)
+        if(this._drunken)
         {
             this.rotation += 1;
         }

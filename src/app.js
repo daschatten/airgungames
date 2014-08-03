@@ -8,7 +8,7 @@ App = {
                 min: 4, 
                 max: 4, 
                 }, 
-            modes: ['Default'],
+            modes: ['3 Sec', '10 Sec', '30 Sec'],
             difficulties: ['Default'],
         },
         { 
@@ -18,7 +18,7 @@ App = {
                 min: 1, 
                 max: 4
                 }, 
-            modes: ['Default'],
+            modes: ['Default', 'Drunken Asteroids'],
             difficulties: ['Easy', 'Medium', 'Hard'],
         },
     ],

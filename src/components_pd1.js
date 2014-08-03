@@ -2,8 +2,6 @@ Crafty.c('Meteor', {
     init: function() {
         this.requires('MoveToStaticTarget, Color, Collision, Mouse, Explodable');
 
-        this.enableRotation(true);
-
         this.onHit('Planet', this.planetHit);
         this.bind('Click', function(){
             this.explode();
@@ -161,6 +159,7 @@ Crafty.c('WaveManager', {
     addSpawn: function(){
         var npc = Crafty.e('Meteor_Brown_Big_1');
         npc.autoSpawn();
+        npc.setDrunken(true);
         npc.doMove();
         this.spawned++;
     },
